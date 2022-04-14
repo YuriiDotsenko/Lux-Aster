@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: darkgray;
+}
+
+.container {
+  width: 1600px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover,
+a:focus {
+  color: blue;
+}
+
+button {
+  background-color: orange;
+  color: aliceblue;
+  border: none;
+  border-radius: 5%;
+  width: 120px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/*------ heder ------ */
+
+.logo {
+  padding-right: 230px;
+}
+
+.navigation {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-list-link.link-active {
+  background-color: blue;
+  color: aliceblue;
+}
+
+.navigation,
+.navigation-list {
+  display: flex;
+  padding-right: 50px;
+}
+
+.navigation-list-item:not(:last-child) {
+  padding-right: 20px;
+}
+
+.select-language {
+  width: 70px;
+  height: 30px;
+}
+
+/*------ main ------ */
+
+.main-title {
+  position: absolute;
+  top: 300px;
+  right: 500px;
+}
+
+.main-text {
+  padding-bottom: 20px;
+}
+
+.about-title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.about-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-text {
+  width: 250px;
+  height: 120px;
+}
+
+.our-services-list {
+  display: flex;
+  justify-content: center;
+}
+
+.our-services-btn:not(:last-child) {
+  padding-right: 20px;
+}
+
+.works-gallery {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.works-img {
+  border: 1px solid black;
+  width: 220px;
+  height: 300px;
+}
+
+.works-list:not(:last-child) {
+  padding-right: 30px;
+}
+
+/*------ footer ------ */
