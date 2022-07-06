@@ -1,125 +1,342 @@
-* {
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: darkgray;
+  font-family: "Montserrat", sans-serif;
 }
 
-.container {
-  width: 1600px;
-  text-align: center;
+img {
+  display: block;
 }
 
-ul {
-  list-style: none;
-}
-
-a {
+.link {
   text-decoration: none;
+  display: block;
   color: black;
 }
 
-a:hover,
-a:focus {
-  color: blue;
+.list {
+  list-style: none;
 }
 
-button {
-  background-color: orange;
-  color: aliceblue;
-  border: none;
-  border-radius: 5%;
-  width: 120px;
-  height: 30px;
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-btn,
+.modal-form-btn {
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border: 1px solid #ff6c00;
+  border-radius: 25px;
+  background-color: transparent;
+  padding-top: 12px;
+  padding-right: 20px;
+  padding-bottom: 12px;
+  padding-left: 20px;
   cursor: pointer;
+  color: red;
+  transition: background-color 250ms linear, color 250ms linear;
+}
+
+.main-btn:hover,
+.modal-form-btn:hover,
+.main-btn:focus,
+.modal-form-btn:focus {
+  transform: scale(1.15);
+  transition: 250ms linear;
 }
 
 /*------ heder ------ */
 
 .logo {
-  padding-right: 230px;
+  background-color: uppercase;
 }
 
 .navigation {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   justify-content: center;
   align-items: center;
-}
-
-.navigation-list-link.link-active {
-  background-color: blue;
-  color: aliceblue;
+  justify-content: space-around;
 }
 
 .navigation,
 .navigation-list {
   display: flex;
-  padding-right: 50px;
+}
+
+.navigation-list-link:hover {
+  color: #ff6c00;
+  transform: scale(1.15);
+  transition: 250ms linear;
 }
 
 .navigation-list-item:not(:last-child) {
   padding-right: 20px;
 }
 
-.select-language {
-  width: 70px;
-  height: 30px;
+.change-lang {
+  width: 50px;
+  height: 25px;
+  border-radius: 15%;
 }
 
 /*------ main ------ */
 
+.main-photo {
+  width: 100%;
+}
+
+.main-section {
+  justify-content: center;
+}
+
 .main-title {
   position: absolute;
-  top: 300px;
+  text-align: center;
+  top: 250px;
   right: 500px;
 }
 
+.main-title-text {
+  letter-spacing: 0.09em;
+  font-size: 40px;
+}
+
 .main-text {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.main-btn:hover,
+.modal-form-btn:hover,
+.main-btn:focus,
+.modal-form-btn:focus {
+  background-color: #ff6c00;
+  color: #fff;
 }
 
 .about-title {
-  margin-top: 40px;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  font-size: 30px;
+}
+
+.about-us-title {
+  text-align: center;
   margin-bottom: 20px;
 }
 
 .about-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
-.about-text {
-  width: 250px;
-  height: 120px;
+.about-list-item:hover .overlay {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 400ms linear;
 }
 
-.our-services-list {
-  display: flex;
-  justify-content: center;
+.about-us-img-wrapper {
+  position: relative;
+  overflow: hidden;
 }
 
-.our-services-btn:not(:last-child) {
-  padding-right: 20px;
-}
-
-.works-gallery {
-  display: flex;
-  justify-content: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.works-img {
-  border: 1px solid black;
-  width: 220px;
-  height: 300px;
-}
-
-.works-list:not(:last-child) {
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  opacity: 0;
+  padding-left: 30px;
   padding-right: 30px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  transform: translateY(100%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(250, 150, 50, 0.9);
+  color: #fff;
+}
+
+/*------ Contact ------ */
+
+.svg-info {
+  display: flex;
+  margin-left: 30px;
+}
+
+.svg-info:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.prezes {
+  margin-left: 10px;
 }
 
 /*------ footer ------ */
+
+.footer-container {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.footer-information {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.footer-information-dev {
+  margin-left: 5px;
+}
+
+/*------ Modal Window ------ */
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-form {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 50px;
+  border-top-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+
+.modal-form-title {
+  margin-bottom: 40px;
+  text-align: center;
+  color: #ff6c00;
+}
+
+.modal-form-input-wrapper {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.modal-form-message {
+  margin-bottom: 40px;
+  height: 60px;
+  resize: none;
+}
+
+.modal-form-message:focus::placeholder {
+  color: #ff6c00;
+}
+
+.modal-form-input:focus,
+.modal-form-message:focus,
+.modal-form-input:not(:placeholder-shown),
+.modal-form-message:not(:placeholder-shown) {
+  outline: none;
+  border-bottom-color: #ff6c00;
+}
+
+.modal-form-label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: transform 250ms linear;
+}
+
+.modal-form-input {
+  height: 30px;
+}
+
+.modal-form-input,
+.modal-form-message {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #000;
+}
+
+.modal-form-input:focus + .modal-form-label,
+.modal-form-input:not(:placeholder-shown) + .modal-form-label {
+  transform: translateY(-30px);
+  color: #ff6c00;
+}
+
+.modal-form-option-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal-form-option-span {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.modal-form-option-span a {
+  color: #3498db;
+}
+
+.modal-form-checkbox:checked + .modal-form-option-span {
+  text-decoration: underline;
+}
+
+.modal-form-btn {
+  color: #000;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.modal-close-btn:hover {
+  fill: #ff6c00;
+  transition: 250ms linear;
+}
